@@ -33,7 +33,7 @@ public class Main {
 				//アイコンの設定
 				//
 				Toolkit tk = Toolkit.getDefaultToolkit();
-				Image img = tk.getImage("icon.png");
+				Image img = tk.getImage(getClass().getResource("icon.png"));
 				frame.setIconImage(img);
 
 				//フレームはデフォルト（最初）では見えないようになっている。（なんのためや）
