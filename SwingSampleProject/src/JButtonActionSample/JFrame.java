@@ -1,41 +1,33 @@
-package JButtonSample;
+package JButtonActionSample;
 
 /**
- * フレームにボタンを設置するサンプル。押しても何も動作しない。
- * メインクラスにjavax.swing.JFrameクラスを継承している。
- * メリットとしてはMainメソッドで簡単になる（？）
+ * 
+ * 
  */
 
 import java.awt.EventQueue;
 import java.awt.FlowLayout;
 import java.awt.HeadlessException;
 
-import javax.swing.ImageIcon;
 import javax.swing.JButton;
 
 public class JFrame extends javax.swing.JFrame {
 
 	public JFrame() throws HeadlessException {
 		// TODO 自動生成されたコンストラクター・スタブ
-		//JFrameのインスタンス設定
+		//フレームの生成
 		super();
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setLayout(new FlowLayout());
 		setSize(512, 460);
 		setTitle("This is title.");
-
-		//ボタンの追加
+		
+		//ボタンの生成
 		JButton btn1 = new JButton("Button1");
+		btn1.addActionListener(new ClickAction());
 		add(btn1);
-
-		//アイコン付きのボタン作成
-		ImageIcon icon = new ImageIcon(
-				getClass().getResource("Resource/icon.png")
-		);
-		JButton btn2 = new JButton("Button2", icon);
-		add(btn2);
-
-		//これだけは忘れずに（じゃなきゃ表示されない）
+		
+		//これだけは忘れずに
 		setVisible(true);
 
 	}
